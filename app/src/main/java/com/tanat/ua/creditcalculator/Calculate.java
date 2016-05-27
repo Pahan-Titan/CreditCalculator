@@ -7,7 +7,7 @@ import java.util.ArrayList;
  */
 public class Calculate {
 
-    static int mountPay;
+    static double mountPay;
     static double commision;
     static double amountMounthPay;
     static double priceCredit;
@@ -22,11 +22,11 @@ public class Calculate {
         commision = Percent(amountCredit, percent);     //коммисия в месяц
         amountMounthPay = mountPay + commision;         //сума месячного платежа
         priceCredit = commision * time;                 //переплата за весь период
-        totalAmount = amountMounthPay * time;           //вся сума по выплат по кредиту
+        totalAmount = amountMounthPay * time;           //полная сума по выплат по кредиту
 
         ArrayList<String> array = new ArrayList<>();
 
-        String mountPaySt = Integer.toString(mountPay);
+        String mountPaySt = Double.toString(mountPay);
         String commisionSt = Double.toString(commision);
         String amountMounthPaySt = Double.toString(amountMounthPay);
 
@@ -37,6 +37,9 @@ public class Calculate {
             array.add(amountMounthPaySt);
         }
 
+        array.add(Double.toString(priceCredit));
+        array.add(Double.toString(totalAmount));
+
         String[] results;
         results = array.toArray(new String[array.size()]);
 
@@ -44,7 +47,7 @@ public class Calculate {
     }
 
     public static String[] resultsConversion (){
-        String[] results = {Integer.toString(mountPay), Double.toString(commision),
+        String[] results = {Double.toString(mountPay), Double.toString(commision),
                 Double.toString(amountMounthPay), Double.toString(priceCredit),
                 Double.toString(totalAmount)};
         return results;

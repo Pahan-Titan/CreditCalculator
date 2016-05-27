@@ -17,7 +17,8 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:weightSum="1">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -26,11 +27,12 @@
                 android:id="@+id/textView" />
 
             <EditText
-                android:layout_width="98dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/editAmountCredit"
                 android:inputType="number"
-                android:layout_marginLeft="15dp" />
+                android:layout_marginLeft="15dp"
+                android:layout_weight="1.43" />
 
         </LinearLayout>
 
@@ -52,7 +54,8 @@
                 android:id="@+id/radioGroup1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal" >
+                android:orientation="horizontal"
+                android:layout_marginLeft="51dp">
 
                 <RadioButton
                     android:layout_width="wrap_content"
@@ -86,11 +89,11 @@
                 android:id="@+id/textView3" />
 
             <EditText
-                android:layout_width="35dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/editValuePercent"
                 android:inputType="number"
-                android:layout_weight="0.33"
+                android:layout_weight="0.05"
                 android:layout_marginLeft="15dp" />
         </LinearLayout>
 
@@ -143,7 +146,7 @@
                 android:id="@+id/textView5" />
 
             <EditText
-                android:layout_width="52dp"
+                android:layout_width="36dp"
                 android:layout_height="wrap_content"
                 android:inputType="numberSigned"
                 android:ems="10"

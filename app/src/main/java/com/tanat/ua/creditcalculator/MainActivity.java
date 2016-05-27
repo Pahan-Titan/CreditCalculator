@@ -56,7 +56,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     //            infoTextView.setText("Вы выбрали кота!");
                 return true;
             case R.id.action_clear:
-    //            infoTextView.setText("Вы выбрали кошку!");
+                editAmountCredit.setText("");
+                editValuePercent.setText("");
+                editQuMounth.setText("");
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -66,10 +68,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-    /*    String amountCredit = editAmountCredit.getText().toString();
-        String percent = editValuePercent.getText().toString();
-        String time = editQuMounth.getText().toString();
-*/
         int amountCredit = Integer.parseInt(editAmountCredit.getText().toString());
         double percent = Double.parseDouble(editValuePercent.getText().toString());
         int time = Integer.parseInt(editQuMounth.getText().toString());
