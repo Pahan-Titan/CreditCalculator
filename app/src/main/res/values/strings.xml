@@ -2,5 +2,7 @@
     <string name="app_name">Credit Calculator</string>
     <string name="action_options">Settings</string>
     <string name="action_clear">Clear</string>
+    <string name="action_action_deposit">Deposit</string>
     <string name="action_save">Save</string>
+    <string name="action_action_credit">Credit</string>
 </resources>

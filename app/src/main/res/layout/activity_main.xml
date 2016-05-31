@@ -55,7 +55,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_marginLeft="51dp">
+                android:layout_marginLeft="10dp">
 
                 <RadioButton
                     android:layout_width="wrap_content"
@@ -95,43 +95,6 @@
                 android:inputType="number"
                 android:layout_weight="0.05"
                 android:layout_marginLeft="15dp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Commission on:"
-                android:id="@+id/textView4"
-                android:textSize="15dp"
-                android:layout_marginTop="7dp" />
-
-            <RadioGroup
-                android:id="@+id/radioGroup2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal" >
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="amount"
-                    android:id="@+id/radioButtonAmount"
-                    android:checked="false"
-                    android:layout_marginLeft="15dp" />
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="balance"
-                    android:id="@+id/radioButtonBalance"
-                    android:checked="false"
-                    android:layout_marginLeft="15dp" />
-            </RadioGroup>
         </LinearLayout>
 
         <LinearLayout

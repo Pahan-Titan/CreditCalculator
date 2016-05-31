@@ -35,8 +35,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         radioButtonMounth = (RadioButton) findViewById(R.id.radioButtonMounth);
         radioButtonYear = (RadioButton) findViewById(R.id.radioButtonYear);
-        radioButtonAmount = (RadioButton) findViewById(R.id.radioButtonAmount);
-        radioButtonBalance = (RadioButton) findViewById(R.id.radioButtonBalance);
 
         buttonCalculate = (Button) findViewById(R.id.buttonCalculate);
         buttonCalculate.setOnClickListener(this);
@@ -60,6 +58,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 editValuePercent.setText("");
                 editQuMounth.setText("");
                 return true;
+            case R.id.action_deposit:
+                Intent intent = new Intent(this, DepositDataActivity.class);
+                startActivity(intent);
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -74,9 +76,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Intent intent = new Intent(this, ResultsActivity.class);
 
-        if (radioButtonMounth.isChecked() || radioButtonAmount.isChecked()){
+        if (radioButtonMounth.isChecked())
             intent.putExtra("type", 1);
-        }
+        if (radioButtonYear.isChecked())
+            intent.putExtra("type", 2);
 
         intent.putExtra("amountCredit", amountCredit);
         intent.putExtra("percent", percent);

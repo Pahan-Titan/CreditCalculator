@@ -1,5 +1,7 @@
 package com.tanat.ua.creditcalculator;
 
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 import java.util.ArrayList;
 
 /**
@@ -12,6 +14,14 @@ public class Calculate {
     static double amountMounthPay;
     static double priceCredit;
     static double totalAmount;
+    static DecimalFormatSymbols s;
+    static DecimalFormat f;
+
+    public Calculate (){
+        s = new DecimalFormatSymbols();
+        s.setDecimalSeparator(',');
+        f = new DecimalFormat("#,##0.00", s);
+    }
 
     private static double Percent (int number, double percent){
         return number * 0.01 * percent;
@@ -26,9 +36,13 @@ public class Calculate {
 
         ArrayList<String> array = new ArrayList<>();
 
-        String mountPaySt = Double.toString(mountPay);
-        String commisionSt = Double.toString(commision);
-        String amountMounthPaySt = Double.toString(amountMounthPay);
+        s = new DecimalFormatSymbols();
+        s.setDecimalSeparator('.');
+        f = new DecimalFormat("#,##0.00", s);
+
+        String mountPaySt = f.format(mountPay);
+        String commisionSt = f.format(commision);
+        String amountMounthPaySt = f.format(amountMounthPay);
 
         for (int i = 1; i < time + 1; i++){
             array.add(Integer.toString(i));
@@ -37,8 +51,41 @@ public class Calculate {
             array.add(amountMounthPaySt);
         }
 
-        array.add(Double.toString(priceCredit));
-        array.add(Double.toString(totalAmount));
+        array.add(f.format(priceCredit));
+        array.add(f.format(totalAmount));
+
+        String[] results;
+        results = array.toArray(new String[array.size()]);
+
+        return results;
+    }
+
+    public static String[] calculate01 (int amountCredit, double percent, int time){
+        mountPay = amountCredit / time;
+        commision = Percent(amountCredit, percent) / 12;
+        amountMounthPay = mountPay + commision;
+        priceCredit = commision * time;
+        totalAmount = amountMounthPay * time;
+
+        ArrayList<String> array = new ArrayList<>();
+
+        s = new DecimalFormatSymbols();
+        s.setDecimalSeparator('.');
+        f = new DecimalFormat("#,##0.00", s);
+
+        String mountPaySt = f.format(mountPay);
+        String commisionSt = f.format(commision);
+        String amountMounthPaySt = f.format(amountMounthPay);
+
+        for (int i = 1; i < time + 1; i++){
+            array.add(Integer.toString(i));
+            array.add(mountPaySt);
+            array.add(commisionSt);
+            array.add(amountMounthPaySt);
+        }
+
+        array.add(f.format(priceCredit));
+        array.add(f.format(totalAmount));
 
         String[] results;
         results = array.toArray(new String[array.size()]);

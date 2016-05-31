@@ -40,6 +40,9 @@ public class ResultsActivity extends AppCompatActivity implements View.OnClickLi
             case (1):
                 results = Calculate.calculate00(amountCredit, percent, time);
                 break;
+            case (2):
+                results = Calculate.calculate01(amountCredit, percent, time);
+                break;
         }
 
         String[] title = {"Mount \n ", "Mount pay \n ","Commision", "Amount pay"};
