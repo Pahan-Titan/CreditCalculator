@@ -46,13 +46,11 @@ public class DepositDataActivity extends AppCompatActivity implements View.OnCli
         buttonCalculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast toast = Toast.makeText(getApplicationContext(),
-                        "Cleaning done", Toast.LENGTH_SHORT);
-                toast.show();
+                Calculate();
             }
         });
 
-        radioButtonNo.isChecked();
+        line.setVisibility(View.INVISIBLE);
     }
 
     @Override
@@ -90,18 +88,35 @@ public class DepositDataActivity extends AppCompatActivity implements View.OnCli
                 line.setVisibility(View.INVISIBLE);
                 break;
         }
-
-        switch (v.getId()) {
-            case R.id.buttonCalculate:
-                Toast toast = Toast.makeText(getApplicationContext(),
-                        "Cleaning done", Toast.LENGTH_SHORT);
-                toast.show();
-                break;
-        }
     }
-    public void btnOnClick(){
-     /*   Toast toast = Toast.makeText(getApplicationContext(),
-                "Cleaning done", Toast.LENGTH_SHORT);
-        toast.show();*/
+
+    public void Calculate(){
+        int amountCredit = Integer.parseInt(editTextAmoutDeposit.getText().toString());
+        double percent = Double.parseDouble(editValuePercent.getText().toString());
+        int time = Integer.parseInt(editTextTime.getText().toString());
+
+        Intent intent = new Intent(this, ResultsActivity.class);
+
+        if (radioButtonMounth.isChecked() && radioButtonYes.isChecked()
+                && radioButtonEveryM.isChecked())
+            intent.putExtra("type", 1);                                 //000
+        if (radioButtonYear.isChecked())
+            intent.putExtra("type", 2);                                 //100
+        if (radioButtonMounth.isChecked() && radioButtonNo.isChecked())
+            intent.putExtra("type", 3);                                 //01x
+        if (radioButtonYear.isChecked() && radioButtonNo.isChecked())
+            intent.putExtra("type", 4);                                 //11x
+        if (radioButtonYear.isChecked() && radioButtonYes.isChecked()
+                && radioButtonEveryY.isChecked())
+            intent.putExtra("type", 5);                                 //101
+        if (radioButtonMounth.isChecked() && radioButtonYes.isChecked()
+                && radioButtonEveryY.isChecked())
+            intent.putExtra("type", 6);                                 //001
+
+        intent.putExtra("amountMoney", amountCredit);
+        intent.putExtra("procedure", "deposit");
+        intent.putExtra("percent", percent);
+        intent.putExtra("time", time);
+        startActivity(intent);
     }
 }

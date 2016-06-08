@@ -43,17 +43,11 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="Оverpayment for the entire period: "
-                                    android:id="@+id/textView7" />
-
-                                <TextView
+                            <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="New Text"
-                                    android:id="@+id/textViewPriceCredit"
+                                    android:id="@+id/textViewProfit"
                                     android:layout_gravity="left" />
                         </LinearLayout>
 
@@ -62,13 +56,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="Total amount  cost credit: "
-                                    android:id="@+id/textView9" />
-
-                                <TextView
+                            <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="New Text"

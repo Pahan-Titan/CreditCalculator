@@ -60,7 +60,7 @@
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="mounth"
+                    android:text="month"
                     android:id="@+id/radioButtonMounth"
                     android:checked="false"
                     android:layout_marginLeft="15dp" />
@@ -118,7 +118,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="mounth"
+                android:text="month"
                 android:id="@+id/textView6" />
 
         </LinearLayout>

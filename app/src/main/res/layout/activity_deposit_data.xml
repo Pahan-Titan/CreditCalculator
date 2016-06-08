@@ -59,7 +59,7 @@
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="mounth"
+                    android:text="month"
                     android:id="@+id/radioButtonMounth"
                     android:checked="false"
                     android:layout_marginLeft="15dp" />
@@ -93,6 +93,31 @@
                 android:inputType="number"
                 android:layout_weight="0.05"
                 android:layout_marginLeft="15dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Deposit for:"
+                android:id="@+id/textView12" />
+
+            <EditText
+                android:layout_width="36dp"
+                android:layout_height="wrap_content"
+                android:inputType="numberSigned"
+                android:ems="10"
+                android:id="@+id/editTextTime" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="months"
+                android:id="@+id/textView13" />
         </LinearLayout>
 
         <LinearLayout
@@ -139,7 +164,7 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:visibility="invisible">
+            android:visibility="visible">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -160,7 +185,7 @@
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="mounth"
+                    android:text="month"
                     android:id="@+id/radioButtonEveryM"
                     android:checked="false"
                     android:layout_marginLeft="15dp" />
@@ -173,31 +198,6 @@
                     android:checked="false"
                     android:layout_marginLeft="15dp" />
             </RadioGroup>
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Deposit for:"
-                android:id="@+id/textView12" />
-
-            <EditText
-                android:layout_width="36dp"
-                android:layout_height="wrap_content"
-                android:inputType="numberSigned"
-                android:ems="10"
-                android:id="@+id/editTextTime" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="mounths"
-                android:id="@+id/textView13" />
         </LinearLayout>
 
         <Button

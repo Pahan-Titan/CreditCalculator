@@ -21,9 +21,8 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     EditText editAmountCredit, editValuePercent, editQuMounth;
-    RadioButton radioButtonMounth, radioButtonYear, radioButtonAmount, radioButtonBalance;
+    RadioButton radioButtonMonth, radioButtonYear;
     Button buttonCalculate;
-    String[] results;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +33,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         editValuePercent = (EditText) findViewById(R.id.editValuePercent);
         editQuMounth = (EditText) findViewById(R.id.editQuMounth);
 
-        radioButtonMounth = (RadioButton) findViewById(R.id.radioButtonMounth);
+        radioButtonMonth = (RadioButton) findViewById(R.id.radioButtonMounth);
         radioButtonYear = (RadioButton) findViewById(R.id.radioButtonYear);
 
         buttonCalculate = (Button) findViewById(R.id.buttonCalculate);
@@ -77,12 +76,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Intent intent = new Intent(this, ResultsActivity.class);
 
-        if (radioButtonMounth.isChecked())
+        if (radioButtonMonth.isChecked())
             intent.putExtra("type", 1);
         if (radioButtonYear.isChecked())
             intent.putExtra("type", 2);
 
-        intent.putExtra("amountCredit", amountCredit);
+        intent.putExtra("procedure", "credit");
+        intent.putExtra("amountMoney", amountCredit);
         intent.putExtra("percent", percent);
         intent.putExtra("time", time);
         startActivity(intent);
