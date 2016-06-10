@@ -17,8 +17,7 @@ public class DepositDataActivity extends AppCompatActivity implements View.OnCli
 
     LinearLayout line;
     EditText editTextAmoutDeposit, editValuePercent, editTextTime;
-    RadioButton radioButtonMounth, radioButtonYear, radioButtonYes, radioButtonNo,
-            radioButtonEveryM, radioButtonEveryY;
+    RadioButton radioButtonMonth, radioButtonYear, radioButtonYes, radioButtonNo;
     Button buttonCalculate;
 
     @Override
@@ -30,14 +29,10 @@ public class DepositDataActivity extends AppCompatActivity implements View.OnCli
         editValuePercent = (EditText) findViewById(R.id.editValuePercent);
         editTextTime = (EditText) findViewById(R.id.editTextTime);
 
-        line = (LinearLayout) findViewById(R.id.line);
-
-        radioButtonMounth = (RadioButton) findViewById(R.id.radioButtonMounth);
+        radioButtonMonth = (RadioButton) findViewById(R.id.radioButtonMonth);
         radioButtonYear = (RadioButton) findViewById(R.id.radioButtonYear);
         radioButtonYes = (RadioButton) findViewById(R.id.radioButtonYes);
         radioButtonNo = (RadioButton) findViewById(R.id.radioButtonNo);
-        radioButtonEveryM = (RadioButton) findViewById(R.id.radioButtonEveryM);
-        radioButtonEveryY = (RadioButton) findViewById(R.id.radioButtonEveryY);
 
         radioButtonYes.setOnClickListener(this);
         radioButtonNo.setOnClickListener(this);
@@ -49,8 +44,6 @@ public class DepositDataActivity extends AppCompatActivity implements View.OnCli
                 Calculate();
             }
         });
-
-        line.setVisibility(View.INVISIBLE);
     }
 
     @Override
@@ -63,12 +56,16 @@ public class DepositDataActivity extends AppCompatActivity implements View.OnCli
     public boolean onOptionsItemSelected(MenuItem item) {
 
         switch (item.getItemId()) {
-            case R.id.action_clear:
+            case R.id.action_clear_deposit:
                 editTextAmoutDeposit.setText("");
                 editValuePercent.setText("");
                 editTextTime.setText("");
+                radioButtonMonth.setChecked(false);
+                radioButtonYear.setChecked(false);
+                radioButtonYes.setChecked(false);
+                radioButtonNo.setChecked(false);
                 return true;
-            case R.id.action_action_credit:
+            case R.id.action_credit:
                 Intent intent = new Intent(this, MainActivity.class);
                 startActivity(intent);
                 return true;
@@ -79,15 +76,7 @@ public class DepositDataActivity extends AppCompatActivity implements View.OnCli
 
     @Override
     public void onClick(View v) {
-        RadioButton rb = (RadioButton) v;
-        switch (rb.getId()) {
-            case R.id.radioButtonYes:
-                line.setVisibility(View.VISIBLE);
-                break;
-            case R.id.radioButtonNo:
-                line.setVisibility(View.INVISIBLE);
-                break;
-        }
+
     }
 
     public void Calculate(){
@@ -97,21 +86,14 @@ public class DepositDataActivity extends AppCompatActivity implements View.OnCli
 
         Intent intent = new Intent(this, ResultsActivity.class);
 
-        if (radioButtonMounth.isChecked() && radioButtonYes.isChecked()
-                && radioButtonEveryM.isChecked())
+        if (radioButtonMonth.isChecked() && radioButtonYes.isChecked())
             intent.putExtra("type", 1);                                 //000
-        if (radioButtonYear.isChecked())
+        if (radioButtonYear.isChecked() && radioButtonYes.isChecked())
             intent.putExtra("type", 2);                                 //100
-        if (radioButtonMounth.isChecked() && radioButtonNo.isChecked())
+        if (radioButtonMonth.isChecked() && radioButtonNo.isChecked())
             intent.putExtra("type", 3);                                 //01x
         if (radioButtonYear.isChecked() && radioButtonNo.isChecked())
             intent.putExtra("type", 4);                                 //11x
-        if (radioButtonYear.isChecked() && radioButtonYes.isChecked()
-                && radioButtonEveryY.isChecked())
-            intent.putExtra("type", 5);                                 //101
-        if (radioButtonMounth.isChecked() && radioButtonYes.isChecked()
-                && radioButtonEveryY.isChecked())
-            intent.putExtra("type", 6);                                 //001
 
         intent.putExtra("amountMoney", amountCredit);
         intent.putExtra("procedure", "deposit");

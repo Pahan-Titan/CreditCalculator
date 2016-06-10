@@ -60,7 +60,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="month"
-                    android:id="@+id/radioButtonMounth"
+                    android:id="@+id/radioButtonMonth"
                     android:checked="false"
                     android:layout_marginLeft="15dp" />
 
@@ -154,47 +154,6 @@
                     android:layout_height="wrap_content"
                     android:text="no"
                     android:id="@+id/radioButtonNo"
-                    android:checked="false"
-                    android:layout_marginLeft="15dp" />
-            </RadioGroup>
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/line"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:visibility="visible">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Once every"
-                android:id="@+id/textView11"
-                android:layout_marginTop="7dp"
-                android:textSize="15dp"
-                android:textIsSelectable="false" />
-
-            <RadioGroup
-                android:id="@+id/radioGroup3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginLeft="10dp" >
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="month"
-                    android:id="@+id/radioButtonEveryM"
-                    android:checked="false"
-                    android:layout_marginLeft="15dp" />
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="year"
-                    android:id="@+id/radioButtonEveryY"
                     android:checked="false"
                     android:layout_marginLeft="15dp" />
             </RadioGroup>

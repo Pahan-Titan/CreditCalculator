@@ -4,12 +4,12 @@
     tools:context=".DepositDataActivity">
 
     <item
-        android:id="@+id/action_action_clear"
+        android:id="@+id/action_clear_deposit"
         android:orderInCategory="100"
         android:title="@string/action_clear"
         app:showAsAction="never"/>
     <item
-        android:id="@+id/action_action_credit"
+        android:id="@+id/action_credit"
         android:orderInCategory="100"
         android:title="@string/action_action_credit"
         app:showAsAction="never"/>

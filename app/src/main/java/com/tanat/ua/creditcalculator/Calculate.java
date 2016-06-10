@@ -14,6 +14,7 @@ public class Calculate {
     static double amountMounthPay;
     static double priceCredit;
     static double totalAmount;
+    static double[] profitFor;
     static DecimalFormatSymbols s;
     static DecimalFormat f;
 
@@ -142,6 +143,42 @@ public class Calculate {
 
         return results;
     }
+
+ /*   public static String[] deposit101 (int amountDeposit, double percent, int time){
+        double[] commisionM = new double[time+1];
+        double[] afterMonth = new double[time+1];
+
+        commisionM[0] = Percent(amountDeposit, percent/12);
+        afterMonth[0] = amountDeposit + commisionM[0];
+        priceCredit = commisionM[0];
+
+        for (int i = 1; i < time+1; i++){
+            commisionM[i] = Percent(afterMonth[i-1], percent/12);
+            afterMonth[i] = afterMonth[i-1] + commisionM[i];
+            priceCredit = priceCredit + commisionM[i];                 //сумма заработаная за время кедита
+        }
+
+        int i = 1;
+        do{
+            if (i > 12 && (i-1)%12 == 0){
+                afterMonth[i] = amountDeposit + commisionM[0];
+                profitFor[(i-1)/12] = priceCredit;
+            }
+            else {
+                commisionM[i] = Percent(afterMonth[i - 1], percent / 12);
+                afterMonth[i] = afterMonth[i - 1] + commisionM[i];
+            }
+            priceCredit = priceCredit + commisionM[i];                 //сумма заработаная за время кедита
+            i++;
+        } while (i < time);
+
+        totalAmount = amountDeposit + priceCredit;           //будет получено в конце срока
+
+        String[] results;
+        results = compoundInterest(time, commisionM, afterMonth);
+
+        return results;
+    }*/
 
     private static String[] resultsConversion (int time){
         ArrayList<String> array = new ArrayList<>();

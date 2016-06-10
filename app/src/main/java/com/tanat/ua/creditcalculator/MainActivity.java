@@ -57,6 +57,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 editAmountCredit.setText("");
                 editValuePercent.setText("");
                 editQuMounth.setText("");
+                radioButtonMonth.setChecked(false);
+                radioButtonYear.setChecked(false);
                 return true;
             case R.id.action_deposit:
                 Intent intent = new Intent(this, DepositDataActivity.class);

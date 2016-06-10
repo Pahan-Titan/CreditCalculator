@@ -77,12 +77,6 @@ public class ResultsActivity extends AppCompatActivity implements View.OnClickLi
                 case (4):
                     results = Calculate.deposit11(amountMoney, percent, time);
                     break;
-                case (5):
-        //            results = Calculate.deposit101(amountMoney, percent, time);
-                    break;
-                case (6):
-        //            results = Calculate.deposit001(amountMoney, percent, time);
-                    break;
             }
         }
 
